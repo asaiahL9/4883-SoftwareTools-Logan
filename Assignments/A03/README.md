@@ -2,6 +2,8 @@
 
 Use Graphviz to create a binary search tree using dot language/engine
 
+![bst](https://raw.githubusercontent.com/asaiahL9/4883-SoftwareTools-Logan/2f2e4d1350f9c221f89f038bd8a6c8a79bdfd9de/Assignments/A03/graphviz.svg)
+
 ```
 digraph linkedlist {  
   node [shape=record]
@@ -24,8 +26,6 @@ digraph linkedlist {
   C:RIGHT->G:DATA
 }
 ```
-
-![bst](https://raw.githubusercontent.com/asaiahL9/4883-SoftwareTools-Logan/2f2e4d1350f9c221f89f038bd8a6c8a79bdfd9de/Assignments/A03/graphviz.svg)
 
 |   #   | File | Description |
 | :---: | ----------- | ----------|
