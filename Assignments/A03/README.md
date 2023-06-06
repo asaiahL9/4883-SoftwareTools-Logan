@@ -29,5 +29,5 @@ digraph linkedlist {
 
 |   #   | File | Description |
 | :---: | ----------- | ----------|
-|  1 | [binarysearchtree.dot](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/binarysearchtree.dot)      ||  
-|2| [Binary Search Tree](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/graphviz.svg)|           | 
+|  1 | [binarysearchtree.dot](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/binarysearchtree.dot)|Implementation|  
+|2| [Binary Search Tree](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/graphviz.svg)|Graphic Representation| 
