@@ -30,4 +30,4 @@ digraph linkedlist {
 |   #   | File | Description |
 | :---: | ----------- | ----------|
 |  1 | [bst.dot](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/binarysearchtree.dot)|Implementation|  
-|2| [bst.svg](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/graphviz.svg)|Graphic Representation| 
+|2| [bst.svg](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/graphviz.svg)|Graphic| 
