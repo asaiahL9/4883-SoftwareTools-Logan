@@ -10,3 +10,4 @@ I chose Sqlite because it is an easy to use, useful tool for data storage and ma
 
 #### https://www.sqlite.org/index.html
 
+![clickup](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/clickup.png)
