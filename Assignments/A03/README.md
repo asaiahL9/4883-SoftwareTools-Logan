@@ -1,12 +1,12 @@
 ## Software Tool
 
-### ClickUp
+### Sqlite
 
-![clickup](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/clickup.png)
+Sqlite is a C-library database engine used for embed data.
 
-ClickUp is a project management tool with video editing, scheduling, bug tracking, and many more capabilities.
+I chose Sqlite because it is an easy to use, useful tool for data storage and management.
 
-I chose ClickUp because I believe it allows users so much functionality inside of one app.
+![sqlite](https://github.com/asaiahL9/4883-SoftwareTools-Logan/blob/main/Assignments/A03/sqlite.jpg)
 
-#### https://clickup.com/
+#### https://www.sqlite.org/index.html
 
