@@ -53,7 +53,11 @@ def asyncGetWeather(url):
   return render                                               # return the page source HTML
     
 
-
+"""
+Function: getLocations
+Purpose: Read json file and return list of airports
+Returns: None
+"""
 def getLocations():
   with open("airports.json") as f:
     #data = json.loads(f.read())
@@ -61,8 +65,14 @@ def getLocations():
     for i in data:
       locations.append(i['city']+ ', Airport (' + i['icao'] + ')')
   
+# retrieve airports
 getLocations()
 
+"""
+Function: findData
+Purpose: Read html weather data and accept input from PySimpleGUI form
+Returns: list
+"""
 def findData():
   with open('table1.html') as f:
       table = f.read()
@@ -79,30 +89,34 @@ def findData():
   
   keys = []
   for d in head:
+      # cleaning data from html
       key = d.text.strip().replace(' ','').replace('\n','')
-    #   print('key: ' + key)
+      # add key to "keys" list
       keys.append(key)
       
+      # retrieve all 'td' rows from html
   for row in rows: 
       row = row.find_all('td')
       data = []
       for td in row:
-          # print(data.text.strip().replace(' ','').replace('\n',''))
-          # print("====================================")
           data.append(td.text.strip().replace(' ','').replace('\n',''))
       dictionary = dict(zip(keys, data))
+      # add data to dictionary
       allData.append(dictionary)
-#   print(allData)
+  # add row to list 'Wdata'
   for dict1 in allData:
     if dict1:
         list = [i for i in dict1.values()]
         Wdata.append(list)
-    #   print(dict1.values())
-    #   Wdata.append(dict1.values())
   
 #   print(Wdata)
   return Wdata
 
+"""
+Function: genUrl
+Purpose: generate a weather url based on data from PySimpleGUI form
+Returns: string url
+"""
 def genUrl(date,code):
   base_url = "https://wunderground.com/history"
   filter = "daily"   
@@ -126,37 +140,34 @@ window = sg.Window('Calendar', layout)
 
 
 
-
+# GUI code
+# creates a second window when after data is collected
+#  table displays data
 while True:
     event, values = window.read()
     if event in (sg.WIN_CLOSED, 'Exit'):
         break
     elif event == 'Retrieve Weather Data':
-        # layout = [[sg.Text("New Window", key="new")]]
-        # window = sg.Window("Second Window", layout, modal=True)
         toprow = ['Time', 'Temperature', 'Dewpoint', 'Humidity','Wind','Wind Speed','Wind Gust', 'Pressure','Precipitation','Condition']
         length = len(values['-COMBO-'].split())
-        # print(length)
         toClean = values['-COMBO-'].split()[length-1]
         apCode = toClean.replace('(','').replace(')','')  
-        # print(apCode)
         site = genUrl(values['-DATE-'], apCode)
-        # get the page source HTML from the URL
         page = asyncGetWeather(site)
-        # # Could be a good idea to use the buildWeatherURL function from gui.py
-        # url = 'http://www.wunderground.com/history/daily/KCHO/date/2020-12-31'
+
         # parse the HTML
         soup = BeautifulSoup(page, 'html.parser')
         
         # find the appropriate tag that contains the weather data
         history = soup.find('lib-city-history-observation')
         # print the parsed HTML
-        # print(history.prettify())
 
+        # write html data to file
         with open('table1.html', 'w') as f:
             f.write(history.prettify())
-
+        # collect data
         rows = findData()
+        # initialize table
         tbl1 = sg.Table(values=rows, headings=toprow,
            auto_size_columns=True,
            display_row_numbers=False,
@@ -166,6 +177,7 @@ while True:
            expand_x=True,
            expand_y=True,
          enable_click_events=True)
+        # second window containing data
         layout = [[tbl1]]
         window = sg.Window(values['-COMBO-'], layout, size=(715, 200), resizable=True)
 window.close()
