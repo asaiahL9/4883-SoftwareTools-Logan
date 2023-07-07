@@ -10,7 +10,7 @@
 
 To run this program install requirements.txt using the command ```pip install -r requirements.txt```
 
-The paths were the most difficult implementation of this program for me. I have lots of optional parameters and
+The paths were the most difficult implementation of this program for me. I changed to format severall times and I have lots of optional parameters and
 it all became a jumbled mess in my opinion. My future APIs will definitely have better structure.
 
 At this point I am not sure which funtionalities I've added or misinterpreted.
