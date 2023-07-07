@@ -2,11 +2,18 @@
 
 ### Create an API using fastapi
 
-|   #   | File                 | Description               |
-| :---: | -------------------- | ------------------------- |
-|   1   | [main.py](main.py)   | [Implementation](main.py) |
-|   2   | [data.csv](data.csv) | [Data File](data.csv)     |
+|   #   | File                                 | Description                  |
+| :---: | ------------------------------------ | ---------------------------- |
+|   1   | [main.py](main.py)                   | [Implementation](main.py)    |
+|   2   | [data.csv](data.csv)                 | [Data File](data.csv)        |
+|   3   | [requirements.txt](requirements.txt) | [Packages](requirements.txt) |
 
+To run this program install requirements.txt using the command ```pip install -r requirements.txt```
+
+The paths were the most difficult implementation of this program for me. I have lots of optional parameters and
+it all became a jumbled mess in my opinion. My future APIs will definitely have better structure.
+
+At this point I am not sure which funtionalities I've added or misinterpreted.
 
 http:localhost:5000/deaths/
 
